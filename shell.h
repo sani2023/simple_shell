@@ -49,7 +49,7 @@ void handle_d_signaquit(int signa);
 void handle_d_signastp(int signa);
 
 /* to_execute.c */
-int to_execute(char **arg);
+int to_execute(char **argv);
 
 /* to_parse.c */
 char **tokenizing(char *stn, const char *delimeter9);
@@ -66,11 +66,11 @@ char find_d_path(char *comman);
 
 /* to_free.c */
 void free_d_erro(char **argv, char *arg);
-void free_d_tokn(char **pointr);
+void free_d_tokn(char **point);
 void free_d_path(void);
 
 /* d_erro.c */
-void _puts(char *string);
+void _puts(char *stn);
 void _puterro(char *erro);
 
 /* to_util_func.c */
@@ -78,7 +78,7 @@ int string_len(const char *);
 int string_comp(const char *g1, const char *g2);
 int string_ncomp(const char *g1, const char *g2);
 char *string_str(char *hack, char *needl);
-char *string_char(char *g, char z);
+char *string_char(char *t, char z);
 
 /** to_util_func1.c */
 char *string_cpy(char *, char *);
@@ -88,8 +88,8 @@ int _putchar(char);
 unsigned int string_pn(char *g, char *acc);
 
 /* to_util_func2.c */
-int d_atoi(const char *string);
-char *d_mem_sett(char *, char, unsigned int);
+int d_atoi(const char *stn);
+char *d_mem_sett(char *x, int u, unsigned int m);
 char *d_mem_copy(char *destin, char *sourc, unsigned int z);
 void *to_realloc(void *, unsigned int, unsigned int);
 void *to_calloc(unsigned int membn, unsigned int size9);

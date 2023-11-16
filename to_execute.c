@@ -1,4 +1,4 @@
-#include "sehll"
+#include "shell.h"
 /**
  * to_execute - executing comman with argument
  * @argv: array of string containing the comman & its arg

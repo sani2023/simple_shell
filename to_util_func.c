@@ -2,26 +2,26 @@
 
 /**
  * string_len - rtrn length of strng
- * @p: for checking the length
+ * @t: for checking the length
  *
  * Return: int length of strng
  */
-int string_len(const char *z)
+int string_len(const char *t)
 {
 	int y = 0;
 
-	if (!z)
+	if (!t)
 		return (0);
 
-	while (*z++)
+	while (*t++)
 		y++;
 	return (y);
 }
 
 /**
  * string_comp - to compare 2 strings
- * @p1: 1st strn to comp
- * @p2: 2nd strn to comp
+ * @g1: 1st strn to comp
+ * @g2: 2nd strn to comp
  * Return: 0 if p1 & p2 are equal
  */
 int string_comp(const char *g1, const char g2)
@@ -36,8 +36,8 @@ int string_comp(const char *g1, const char g2)
 
 /**
  * string_ncomp - comp 2 strn up to specified nbr
- * @p1: 1st strn for comparison
- * @p2: 2nd strn for comparison
+ * @g1: 1st strn for comparison
+ * @g2: 2nd strn for comparison
  * @m: maximum
  * Return: 0 if strn = up to m char
  */
@@ -92,21 +92,21 @@ char *string_str(char *hack, char *needl)
 
 /**
  * string_char - fnc dad locate a char
- * @str: pntr to our strn array
- * @ca: char to locate input array
+ * @t: pntr to our strn array
+ * @z: char to locate input array
  * Return: 1st happen or char or null
  */
-char string_char(char *g, char z)
+char string_char(char *t, char z)
 {
-	while (*g != '\0')
+	while (*t != '\0')
 	{
-		if (*g == z)
-			return (g);
-		g++;
+		if (*t == z)
+			return (t);
+		t++;
 	}
 
-	if (*g == z)
-		return (g);
+	if (*t == z)
+		return (t);
 
 	return (NULL);
 }

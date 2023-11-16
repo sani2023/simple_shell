@@ -21,11 +21,11 @@ int main(void)
 		if (!inpute || !*inpute)
 			break;
 
-		arg = tokenizing_d_inpute(inpute);
+		arg = tokenizing_inpute(inpute);
 		if (!arg || !*arg)
 		{
 			free(inpute);
-			free_d_tokn(args);
+			free_d_tokn(arg);
 			continue;
 		}
 

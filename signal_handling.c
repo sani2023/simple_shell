@@ -10,7 +10,7 @@ void handle_d_sigint(int signa)
 {
 	(void) signa;
 	_putchar('\n');
-	prompt();
+	to_prompt();
 }
 
 /**
@@ -36,5 +36,5 @@ void handle_d_signastp(int signa)
 {
 	(void) signa;
 	_puts("\n");
-	prompt();
+	to_prompt();
 }

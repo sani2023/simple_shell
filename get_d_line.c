@@ -16,7 +16,7 @@ void *get_d_line(void)
 	{
 		if (buff_pos2 >= buff_size)
 		{
-			buff_size = read(STDIN_FILENO, buffer, BUFFER_SIZE);
+			buff_size = read(STDIN_FILENO, buff, BUFFER_SIZE);
 			buff_pos2 = 0;
 			if (buff_size == 0)
 				return (inputed_strn);
@@ -26,7 +26,7 @@ void *get_d_line(void)
 				return (NULL);
 			}
 		}
-		curren_chr = buffer[buff_pos2];
+		curren_chr = buff[buff_pos2];
 		buff_pos2++;
 
 		if (curren_chr == '\n')

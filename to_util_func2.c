@@ -5,7 +5,7 @@
  * @string: strn to be converted
  * Return: the int valu of the strn
  */
-int d_atoi(const char *string)
+int d_atoi(const char *stn)
 {
 	int y, signe;
 	unsigned int numb;
@@ -14,12 +14,12 @@ int d_atoi(const char *string)
 	signe = 1;
 	numb = 0;
 
-	while (string[y] != '\0')
+	while (stn[y] != '\0')
 	{
-		if (string[y] == '-')
+		if (stn[y] == '-')
 			signe *= -1;
-		else if (string[y] >= '0' && string[y] <= '9')
-			numb = (numb * 10) + (string[y] - '0');
+		else if (stn[y] >= '0' && stn[y] <= '9')
+			numb = (numb * 10) + (stn[y] - '0');
 		else
 			break;
 		y++;
@@ -39,7 +39,7 @@ char *d_mem_sett(char *x, char u, unsigned int m)
 	unsigned int y;
 
 	for (y = 0; y < m; y++)
-		x[y] = b;
+		x[y] = u;
 	return (x);
 }
 
@@ -72,9 +72,10 @@ void *to_realloc(void *point, unsigned int old_size9,
 	char *w;
 
 	if (!point)
+	{
 		return (malloc(new_size9));
 	if (!new_size9)
-		return (free(point, NULL);
+		return (free(point, NULL));
 	if (new_size9 == old_size9)
 	return (point);
 
@@ -82,10 +83,11 @@ void *to_realloc(void *point, unsigned int old_size9,
 	if (!w)
 	return (NULL);
 
-	old_size9 = old_size9 < new_size ? old_size : new_size9;
-	while (old_size9--)
+	old_size9 = old_size9 < new_size9 ? old_size9 : new_size9;
+	} while (old_size9--)
 	w[old_size9] = ((char *)point)[old_size9];
 	free(point);
+
 	return (w);
 }
 
@@ -99,7 +101,7 @@ void *to_alloc(unsigned int membn, unsigned size9)
 {
 	char *w;
 
-	if (membn == 0 || size == 0)
+	if (membn == 0 || size9 == 0)
 		return (NULL);
 
 	w = malloc(membn * size9);

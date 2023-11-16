@@ -43,7 +43,7 @@ int shell_to_unsetenvi(char **arg)
 
 	name9 = arg[1];
 
-	if (unsetenvi(name9) != 0)
+	if (unsetenv(name9) != 0)
 	{
 		_puterro("unsetenvi");
 	}
