@@ -1,41 +1,19 @@
 #include "shell.h"
 
 /**
- * main - implementing a smple shell
- *
- * Return: EXIT_SUCCESS
+ * main - main function source file
+ * Return: 0 if success
  */
 
 int main(void)
 {
-	char *inpute;
-	char **args;
-	int statuss;
-
-	signal(SIGINT, handle_d_signaint);
-	signal(SIGQUIT, handle_d_signaquit);
-	signal(SIGTSTP, handle_d_signastp);
+	char comand[COMMAND_MAX_LENGTH];
 
 	do {
-		inpute = get_d_input();
-		if (!inpute || !*inpute)
-			break;
+		showing_prompt();
+		getting_input(comand, sizeof(comand));
+		executes_comand(comand);
+	} while (1);
 
-		args = tokenizing_inpute(inpute);
-		if (!args || !*args)
-		{
-			free(inpute);
-			free_d_tokn(args);
-			continue;
-		}
-
-		statuss = execute(args);
-		free(inpute);
-		free_d_tokn(args);
-
-		statuss = 1;
-
-	} while (statuss);
-
-	return (EXIT_SUCCESS);
+	return (0);
 }

@@ -1,12 +1,10 @@
 #include "shell.h"
 
 /**
- * prompt - func taht print to sdin
- * Return: empty
+ * showing_prompt - display prompt
+ * Return: NULL
  */
-
-void prompt(void)
+void showing_prompt(void)
 {
-	_puts(PROMPT);
-	fflush(stdout);
+	sani_print("sani_shell$ ");
 }
