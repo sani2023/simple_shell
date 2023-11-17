@@ -2,18 +2,18 @@
 
 /**
  * shell_for_exit - exit d sehll
- * @arg: argum
+ * @args: argum
  * Return: NULL
  */
-void shell_for_exit(char **arg)
+void shell_for_exit(char **args)
 {
 	int statuss = 0;
 
-	if (arg[1] != NULL)
+	if (args[1] != NULL)
 	{
-		statuss = d_atoi(arg[1]);
+		statuss = d_atoi(args[1]);
 	}
-	free_d_tokn(arg);
+	free_d_tokn(args);
 	free_d_last_input();
 	exit(statuss);
 }

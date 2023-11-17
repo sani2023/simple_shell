@@ -9,7 +9,7 @@
 int main(void)
 {
 	char *inpute;
-	char **arg;
+	char **args;
 	int statuss;
 
 	signal(SIGINT, handle_d_signaint);
@@ -17,21 +17,21 @@ int main(void)
 	signal(SIGTSTP, handle_d_signastp);
 
 	do {
-		inpute = get_d_line();
+		inpute = get_d_input();
 		if (!inpute || !*inpute)
 			break;
 
-		arg = tokenizing_inpute(inpute);
-		if (!arg || !*arg)
+		args = tokenizing_inpute(inpute);
+		if (!args || !*args)
 		{
 			free(inpute);
-			free_d_tokn(arg);
+			free_d_tokn(args);
 			continue;
 		}
 
-		statuss = to_execute(arg);
+		statuss = execute(args);
 		free(inpute);
-		free_d_tokn(arg);
+		free_d_tokn(args);
 
 		statuss = 1;
 

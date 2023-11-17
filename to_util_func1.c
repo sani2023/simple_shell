@@ -14,7 +14,7 @@ char *string_cpy(char *destin, char *sourc)
 		return (destin);
 	while (sourc[y])
 	{
-		detin[y] = sourc[y];
+		destin[y] = sourc[y];
 		y++;
 	}
 	destin[y] = 0;
@@ -27,7 +27,7 @@ char *string_cpy(char *destin, char *sourc)
  * @sourc: from where it was
  * Return: ptr to destin
  */
-char *string_cat(char *destin, char *sourc)
+char *string_cat(char *destin, const char *sourc)
 {
 	char *bck = destin;
 
@@ -41,23 +41,23 @@ char *string_cat(char *destin, char *sourc)
 
 /**
  * string_up - to double d string
- * @string: strn to double
+ * @stn: strn to double
  * Return: ptr to d dbl strin
  */
-char *string_up(const char *g)
+char *string_up(const char *stn)
 {
 	int leng = 0;
 	char *bck;
 
-	if (g == NULL)
+	if (stn == NULL)
 		return (NULL);
-	while (*g++)
+	while (*stn++)
 		leng++;
 	bck = malloc(sizeof(char) * (leng + 1));
 	if (!bck)
 		return (NULL);
 	for (leng++; leng--;)
-		bck[leng] = *--g;
+		bck[leng] = *--stn;
 	return (bck);
 }
 

@@ -2,18 +2,18 @@
 
 /**
  * string_len - rtrn length of strng
- * @t: for checking the length
+ * @g: for checking the length
  *
  * Return: int length of strng
  */
-int string_len(const char *t)
+int string_len(const char *g)
 {
 	int y = 0;
 
-	if (!t)
+	if (!g)
 		return (0);
 
-	while (*t++)
+	while (*g++)
 		y++;
 	return (y);
 }
@@ -60,30 +60,30 @@ int string_ncomp(const char *g1, const char *g2, size_t m)
 
 /**
  * string_str - checks if needle start with
- * @hack: str to search
- * @needl: to find the substrin
+ * @haystack: str to search
+ * @needle: to find the substrin
  * Return: address of next char hack
  */
-char *string_str(char *hack, char *needl)
+char *string_str(char *haystack, char *needle)
 {
 	int y;
 
-	for (y = 0; hack[y] != '\0'; y++)
+	for (y = 0; haystack[y] != '\0'; y++)
 	{
-		if (hack[y] == needl[0])
+		if (haystack[y] == needle[0])
 		{
-			int g;
+			int l;
 
-			for (g = 0; needl[g] != '\0'; g++)
+			for (l = 0; needl[l] != '\0'; l++)
 			{
-				if (hack[y + g] != needl[g])
+				if (haystack[y + l] != needle[l])
 				{
 					break;
 				}
 			}
-			if (needl[g] == '\0')
+			if (needle[l] == '\0')
 			{
-				return (&hack[y]);
+				return (&haystack[y]);
 			}
 		}
 	}
@@ -92,21 +92,21 @@ char *string_str(char *hack, char *needl)
 
 /**
  * string_char - fnc dad locate a char
- * @t: pntr to our strn array
+ * @g: pntr to our strn array
  * @z: char to locate input array
  * Return: 1st happen or char or null
  */
-char string_char(char *t, char z)
+char string_char(char *g, char z)
 {
-	while (*t != '\0')
+	while (*g != '\0')
 	{
-		if (*t == z)
-			return (t);
-		t++;
+		if (*g == z)
+			return (g);
+		g++;
 	}
 
-	if (*t == z)
-		return (t);
+	if (*g == z)
+		return (g);
 
 	return (NULL);
 }

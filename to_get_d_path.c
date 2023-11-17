@@ -7,5 +7,5 @@
  */
 char *to_get_d_path(void)
 {
-	return (to_get_envi("PATH"));
+	return (to_get_env("PATH"));
 }

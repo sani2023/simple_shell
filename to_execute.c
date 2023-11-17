@@ -1,10 +1,10 @@
 #include "shell.h"
 /**
- * to_execute - executing comman with argument
+ * execute - executing comman with argument
  * @argv: array of string containing the comman & its arg
  * Return: exit status of the comman
  */
-int to_execute(char **argv)
+int execute(char **args)
 {
 	pid_t idi;
 	int statuss = 0;
@@ -22,9 +22,8 @@ int to_execute(char **argv)
 	}
 	if (idi == -1)
 	{
-		perror(argv[0]), free_d_tokn(argv),
+		perror(args[0]), free_d_tokn(argv),
 			free_d_last_input();
-			exit(EXIT_FAILURE);
 	}
 	if (idi == 0)
 	{

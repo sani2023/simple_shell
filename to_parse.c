@@ -1,8 +1,8 @@
-#include " shell.h"
+#include "shell.h"
 
 /**
  * tokenizing - parse user input into arg
- * @string: the string to split into token
+ * @stn: the string to split into token
  * @delimeter9: the separator
  * Return: array of ptr to the token
  * or if an error
@@ -27,6 +27,15 @@ char **tokenizing(char *stn, const char *delimeter9)
 		string_cpy(bck[y], tokene);
 		tokene = strtok(NULL, delimeter9);
 		y++;
+	}
+	bck = realloc(bck, (y + 1) * sizeof(char *));
+	if (!bck)
+		return (NULL);
+
+	bck[y] = NULL;
+	return (bck);
+}
+
 /**
  * tokenizing_inpute - split a user input into pieces of char
  * @inpute: char inputed by user

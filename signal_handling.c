@@ -1,16 +1,16 @@
 #include "shell.h"
 
 /**
- * handle_d_sigint - function for handling signal
+ * handle_d_signaint - function for handling signal
  * @signa: number of signal
  *
  * Return: Null
  */
-void handle_d_sigint(int signa)
+void handle_d_signaint(int signa)
 {
 	(void) signa;
 	_putchar('\n');
-	to_prompt();
+	prompt();
 }
 
 /**
@@ -36,5 +36,5 @@ void handle_d_signastp(int signa)
 {
 	(void) signa;
 	_puts("\n");
-	to_prompt();
+	prompt();
 }

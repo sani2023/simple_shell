@@ -2,19 +2,19 @@
 
 /**
  * shell_for_ckd - changes d current workin dir
- * @arg: array ofr argum
+ * @args: array ofr argum
  */
-void shell_for_ckd(char **arg)
+void shell_for_cd(char **args)
 {
-	char *dire = arg[1];
+	char *dire = args[1];
 	int bck;
 
 	if (dire == NULL)
 	{
-		dire == to_get_envi("HOME");
+		dire == to_get_env("HOME");
 		if (dire == NULL)
 		{
-			_puts("ckd: No HOME directory foun\n");
+			_puts("cd: No HOME directory foun\n");
 			return;
 		}
 	}
@@ -22,6 +22,6 @@ void shell_for_ckd(char **arg)
 	bck = chdir(dire);
 	if (bck == -1)
 	{
-		_puterro("ckd");
+		perror("cd");
 	}
 }

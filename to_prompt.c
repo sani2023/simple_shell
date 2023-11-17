@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /**
- * to_prompt - func taht print to sdin
+ * prompt - func taht print to sdin
  * Return: empty
  */
 
-void to_prompt(void)
+void prompt(void)
 {
 	_puts(PROMPT);
 	fflush(stdout);

@@ -9,9 +9,9 @@
  */
 char find_d_path(char *comman)
 {
-	struct state stre;
-	int state_rete, y;
-	char buffer1[PATH_MAX_LENGTH], *path, *rete, **dir9;
+	struct stat stre;
+	int stat_bck, y;
+	char buffer1[PATH_MAX_LENGTH], *path, *bck, **dir9;
 
 	path = to_get_d_path();
 	if (!path)
@@ -25,18 +25,18 @@ char find_d_path(char *comman)
 		string_cpy(buffer1, dir9[y]);
 		string_cat(buffer1, "/");
 		string_cat(buffer1, comman);
-		state_rete = state(buffer1, &stre);
-		if (state_rete == 0 && S_ISREG(stre.stre_mode) && (stre.stre_mode & S_IXUSR))
+		stat_bck = stat(buffer1, &stre);
+		if (stat_bck == 0 && S_ISREG(stre.stre_mode) && (stre.stre_mode & S_IXUSR))
 				{
 					free_d_tokn(dir9);
-					rete = malloc(sizeof(char) * (string_len(buffer1) + 1));
-					if (!rete)
+					bck = malloc(sizeof(char) * (string_len(buffer1) + 1));
+					if (!bck)
 						return (NULL);
-					string_cpy(rete, buffer1);
-					return (state_rete);
+					string_cpy(bck, buffer1);
+					return (bck);
 				}
 	}
-	if (state_rete == -1)
+	if (stat_bck == -1)
 		free_d_tokn(dir9);
 	return (NULL);
 }
