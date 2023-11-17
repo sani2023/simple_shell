@@ -11,7 +11,7 @@ int main(void)
 
 	do {
 		showing_prompt();
-		getting_input(comand, sizeof(comand));
+		reads_comand(comand, sizeof(comand));
 		executes_comand(comand);
 	} while (1);
 

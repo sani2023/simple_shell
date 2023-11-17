@@ -19,7 +19,7 @@ void executes_comand(const char *comand)
 		execlp(comand, comand, (char *)NULL);
 		perror("execlp");
 		exit(EXIT_FAILURE);
-	} else if
+	} else
 	{
 		wait(NULL);
 	}
